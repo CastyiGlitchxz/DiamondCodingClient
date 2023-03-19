@@ -28,12 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            components = new System.ComponentModel.Container();
+            progressBar1 = new ProgressBar();
+            timer1 = new System.Windows.Forms.Timer(components);
+            SuspendLayout();
+            // 
+            // progressBar1
+            // 
+            progressBar1.ForeColor = Color.Cyan;
+            progressBar1.Location = new Point(12, 409);
+            progressBar1.Name = "progressBar1";
+            progressBar1.Size = new Size(776, 29);
+            progressBar1.TabIndex = 0;
+            progressBar1.Click += progressBar1_Click;
+            // 
+            // timer1
+            // 
+            timer1.Interval = 5;
+            timer1.Tick += timer1_Tick;
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Black;
+            ClientSize = new Size(800, 450);
+            Controls.Add(progressBar1);
+            ForeColor = Color.White;
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "Form1";
+            Text = "Diamond Coding Client";
+            Load += Form1_Load;
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private ProgressBar progressBar1;
+        private System.Windows.Forms.Timer timer1;
     }
 }
